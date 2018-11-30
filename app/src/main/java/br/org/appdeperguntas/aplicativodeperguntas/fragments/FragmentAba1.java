@@ -1,5 +1,7 @@
 package br.org.appdeperguntas.aplicativodeperguntas.fragments;
 
+import android.arch.lifecycle.ViewModelProvider;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import br.org.appdeperguntas.aplicativodeperguntas.MenuAba1;
 import br.org.appdeperguntas.aplicativodeperguntas.R;
 
 public class FragmentAba1 extends Fragment {
@@ -30,10 +33,27 @@ public class FragmentAba1 extends Fragment {
     }
 
     private View.OnClickListener clickListener(final View view){
+
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Clicado em " + view.getTag(), Toast.LENGTH_SHORT).show();
+
+                switch (v.getId()){
+                    case R.id.frag1_option1:
+                        Intent intent = new Intent(getActivity(), MenuAba1.class);
+                        intent.putExtra("opcao1", "opcao1");
+                        startActivity(intent);
+                        break;
+                    case R.id.frag1_option2:
+                        Toast.makeText(getActivity(), "Clicado em " + v.getTag(), Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.frag1_option3:
+                        Toast.makeText(getActivity(), "Clicado em " + v.getTag(), Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.frag1_option4:
+                        Toast.makeText(getActivity(), "Clicado em " + v.getTag(), Toast.LENGTH_SHORT).show();
+                        break;
+                }
             }
         };
     }

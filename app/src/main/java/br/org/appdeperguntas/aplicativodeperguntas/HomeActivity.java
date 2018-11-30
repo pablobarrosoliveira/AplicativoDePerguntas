@@ -1,5 +1,4 @@
 package br.org.appdeperguntas.aplicativodeperguntas;
-//comentario para testar git
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
