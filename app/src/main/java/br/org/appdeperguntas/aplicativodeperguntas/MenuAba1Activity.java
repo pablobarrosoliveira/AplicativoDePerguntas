@@ -13,22 +13,43 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MenuAba1 extends AppCompatActivity {
+public class MenuAba1Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_aba1);
         ViewPager vpAba1 = findViewById(R.id.menuAba1ViewPager);
+        TextView titulo = findViewById(R.id.menuAba1Titulo);
         ArrayList<String> list = new ArrayList<String>();
-        list.add("AAAA");
-        list.add("BBBB");
-        list.add("CCCC");
-        list.add("DDDD");
-        list.add("EEEE");
-        list.add("FFFF");
 
-        String opcao = getIntent().getStringExtra("opcao1"); //passar conteudo conforme esta var
+        String opcao = getIntent().getStringExtra("opcao");
+        switch (opcao){
+            case "opcao1":
+                titulo.setText("Opção 1");
+                titulo.setBackgroundColor(getResources().getColor(R.color.orange));
+                list.add("Opção 1 Item A");
+                list.add("Opção 1 Item B");
+                break;
+            case "opcao2":
+                titulo.setText("Opção 2");
+                titulo.setBackgroundColor(getResources().getColor(R.color.brown));
+                list.add("Opção 2 Item A");
+                list.add("Opção 2 Item B");
+                break;
+            case "opcao3":
+                titulo.setText("Opção 3");
+                titulo.setBackgroundColor(getResources().getColor(R.color.lightblue));
+                list.add("Opção 3 Item A");
+                list.add("Opção 3 Item B");
+                break;
+            case "opcao4":
+                titulo.setText("Opção 4");
+                titulo.setBackgroundColor(getResources().getColor(R.color.green));
+                list.add("Opção 4 Item A");
+                list.add("Opção 4 Item B");
+                break;
+        }
 
         vpAba1.setPadding(120,0,120,0);
         vpAba1.setClipToPadding(false);

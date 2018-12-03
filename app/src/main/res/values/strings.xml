@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">App De Perguntas</string>
+    <string name="signupin">Cadastre-se ou faça Login</string>
+    <string name="guest">Entrar sem cadastro</string>
 </resources>
