@@ -2,4 +2,14 @@
     <string name="app_name">App De Perguntas</string>
     <string name="signupin">Cadastre-se ou faça Login</string>
     <string name="guest">Entrar sem cadastro</string>
+    <string name="option1">Opção 1</string>
+    <string name="option2">Opção 2</string>
+    <string name="option3">Opção 3</string>
+    <string name="option4">Opção 4</string>
+    <string name="demonstration">Lorem Ipsum</string>
+    <string name="fragment1">Primeira Fragment</string>
+    <string name="fragment2">Segunda Fragment</string>
+    <string name="fragment3">Terceira Fragment</string>
+    <string name="fragment4">Quarta Fragment</string>
+    <string name="fragment5">Quinta Fragment</string>
 </resources>

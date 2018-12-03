@@ -33,25 +33,25 @@ public class HomeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.aba1:
-                        OpenFragment(new FragmentAba1(), "aba1");
+                        OpenFragment(new FragmentAba1());
                         break;
                     case  R.id.aba2:
-                        OpenFragment(new FragmentAba2(), "aba2");
+                        OpenFragment(new FragmentAba2());
                         break;
                     case R.id.aba3:
-                        OpenFragment(new FragmentAba3(), "aba3");
+                        OpenFragment(new FragmentAba3());
                         break;
                     case  R.id.aba4:
-                        OpenFragment(new FragmentAba4(), "aba4");
+                        OpenFragment(new FragmentAba4());
                         break;
                     case  R.id.aba5:
-                        OpenFragment(new FragmentAba5(), "aba5");
+                        OpenFragment(new FragmentAba5());
                         break;
                 }
                 return true;
             }
         });
-        OpenFragment(new FragmentAba1(), "firstRun");
+        OpenFragment(new FragmentAba1());
     }
 
     @Override
@@ -61,11 +61,11 @@ public class HomeActivity extends AppCompatActivity {
         return true;
     }
 
-    void OpenFragment(Fragment fragment, String nome){
+    void OpenFragment(Fragment fragment){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         //if (nome.equals("firstRun")) {}
         //else ft.addToBackStack(nome);
-        ft.replace(R.id.frameLayout, fragment, nome);
+        ft.replace(R.id.frameLayout, fragment);
         ft.commitAllowingStateLoss();
     }
 }
