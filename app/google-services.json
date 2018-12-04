@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "111673180349",
+    "firebase_url": "https://aplicativo-de-perguntas.firebaseio.com",
+    "project_id": "aplicativo-de-perguntas",
+    "storage_bucket": "aplicativo-de-perguntas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111673180349:android:35033406fb49af52",
+        "android_client_info": {
+          "package_name": "br.org.appdeperguntas.aplicativodeperguntas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111673180349-cirjjs7tk6faq1vk26eqm6tun2rkvbni.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.org.appdeperguntas.aplicativodeperguntas",
+            "certificate_hash": "1f17d2dfe01f46c3b8b578147c8ebd40b647a92c"
+          }
+        },
+        {
+          "client_id": "111673180349-4qll5u70fo406254jtpgjaobh5gmhkga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJqzLOFH2yehlksi_-vDGTvvHjG5oUgWg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111673180349-4qll5u70fo406254jtpgjaobh5gmhkga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
