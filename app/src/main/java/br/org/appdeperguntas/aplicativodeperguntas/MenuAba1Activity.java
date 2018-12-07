@@ -11,49 +11,58 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MenuAba1Activity extends AppCompatActivity {
+
+    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_aba1);
-        ViewPager vpAba1 = findViewById(R.id.menuAba1ViewPager);
-        TextView titulo = findViewById(R.id.menuAba1Titulo);
-        ArrayList<String> list = new ArrayList<>();
+        final ViewPager vpAba1 = findViewById(R.id.menuAba1ViewPager);
+        final TextView titulo = findViewById(R.id.menuAba1Titulo);
 
-        String opcao = getIntent().getStringExtra("opcao");
-        switch (opcao){
-            case "opcao1":
-                titulo.setText(R.string.option1);
-                titulo.setBackgroundColor(getResources().getColor(R.color.orange));
-                list.add("Opção 1 Item A");
-                list.add("Opção 1 Item B");
-                break;
-            case "opcao2":
-                titulo.setText(R.string.option2);
-                titulo.setBackgroundColor(getResources().getColor(R.color.brown));
-                list.add("Opção 2 Item A");
-                list.add("Opção 2 Item B");
-                break;
-            case "opcao3":
-                titulo.setText(R.string.option3);
-                titulo.setBackgroundColor(getResources().getColor(R.color.lightblue));
-                list.add("Opção 3 Item A");
-                list.add("Opção 3 Item B");
-                break;
-            case "opcao4":
-                titulo.setText(R.string.option4);
-                titulo.setBackgroundColor(getResources().getColor(R.color.green));
-                list.add("Opção 4 Item A");
-                list.add("Opção 4 Item B");
-                break;
-        }
+        final String opcao = getIntent().getStringExtra("opcao");
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                switch (opcao){
+                    case "m1": titulo.setBackgroundColor(getResources().getColor(R.color.orange)); break;
+                    case "m2": titulo.setBackgroundColor(getResources().getColor(R.color.brown)); break;
+                    case "m3": titulo.setBackgroundColor(getResources().getColor(R.color.lightblue)); break;
+                    case "m4": titulo.setBackgroundColor(getResources().getColor(R.color.green)); break;
+                }
+
+                Map<String,String> td = (HashMap<String, String>) dataSnapshot.child("consoles").child(opcao).getValue();
+                titulo.setText(dataSnapshot.child("menus").child(opcao).getValue().toString());
+
+
+                ArrayList<String> list = new ArrayList<>();
+                list.addAll(new ArrayList<>(td.values()));
+                vpAba1.setAdapter(new myAdapter(list, MenuAba1Activity.this));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         vpAba1.setPadding(120,0,120,0);
         vpAba1.setClipToPadding(false);
-        vpAba1.setAdapter(new myAdapter(list, this));
     }
 
     public class myAdapter extends PagerAdapter{
@@ -95,4 +104,5 @@ public class MenuAba1Activity extends AppCompatActivity {
             return view == o;
         }
     }
+
 }

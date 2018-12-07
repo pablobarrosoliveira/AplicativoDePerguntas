@@ -18,7 +18,9 @@
             android:layout_weight="1"
             android:background="@color/colorPrimaryDark"
             android:text="@string/demonstration"
-            android:textSize="24sp">
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:textColor="@color/white">
 
         </TextView>
         <View

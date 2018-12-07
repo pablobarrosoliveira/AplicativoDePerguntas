@@ -31,7 +31,6 @@ public class LoginScreenActivity extends AppCompatActivity {
                 switch (view.getId()){
                     case R.id.guest:
                         Intent intent = new Intent(LoginScreenActivity.this, HomeActivity.class);
-                        //intent.putExtra("exemplo", "exemplo");
                         startActivity(intent);
                         break;
                     case R.id.signupin:

@@ -5,15 +5,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginScreenActivity">
+    tools:context=".LoginScreenActivity"
+    android:background="@color/white">
 
     <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/logo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         android:layout_above="@id/guest"
         android:foregroundGravity="center"
-        android:layout_margin="120dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_margin="90dp"
+        android:src="@mipmap/game_controller"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/guest"
+        android:text="@string/consolesList"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"/>
 
     <android.support.v7.widget.CardView
         android:id="@+id/guest"
